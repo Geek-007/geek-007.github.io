@@ -1,4 +1,4 @@
-# Welcome to My HomePage
+# Resume
 
 > You can find all the information [on GitHub](https://github.com/geek-007)
 
