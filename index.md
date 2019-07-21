@@ -6,10 +6,10 @@
 
 ## Personal Information
 <!-- Phone: [158xxxxxxx](tel://15848) -->
-* Name:[name] Geek
+* Name:[Geek](https://www.baidu.com)
+- Github: [Geek](https://github.com/Geek-007)
+- Weibo: [@Gaoj](https://weibo.com/)
 - Email: <tongqingqing@iga.ac.cn>
-- Github: [Geek-007](http://github.com/Geek-007)
-- Twitter: [@Gaoj](https://twitter.com/Gaoj_love)
 
 
 ---
