@@ -29,21 +29,21 @@
 ## Professional Experience
 
 
-- **2016-2019**　　Research Assistant　　Northeast Institute of Geography and Agroecology, CAS
+- **2016-2019**　　Research Assistant　-　Northeast Institute of Geography and Agroecology, CAS
 
 
 ---
 ## Education
 
 
-- **2007-2008**               Ph.D. in Civil and Environmental Engineering 
+- **2007-2008**　　Ph.D. in Civil and Environmental Engineering 
 
 
 ---
 ## Honors and Awards
 
 
-- **2019**　　Editor’s Award - Advances in Atmospheric Sciences 	Chen, X., L. R. Leung, Y. Gao, Y. Liu, M. Wigmosta, and M. Richmond (2018), Predictability of Extreme Precipitation in Western U.S.
+- **2019**　　Editor’s Award　　Advances in Atmospheric Sciences 
 
 
 ---
@@ -58,7 +58,7 @@
 
 ---
 ## Technical Skills
- - Programming language : [python](https://www.python.org/)  |  [ncl](http://www.ncl.ucar.edu/)  | Fortran | [Bash](https://www.gnu.org/software/bash/)
+ - Programming language : [python](https://www.python.org/)   |  [ncl](http://www.ncl.ucar.edu/)  | Fortran  | [Bash](https://www.gnu.org/software/bash/)
  - Platform : Windows | Linux
  - Numerical model : Weather Research and Forecasting model (WRF)
 
