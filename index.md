@@ -51,7 +51,7 @@
 ## Publications
 
 
-&ensp; 1.	Chen, X., L. R. Leung, Y. Gao, Y. Liu, M. Wigmosta, and M. Richmond (2018), Predictability of Extreme Precipitation in Western U.S. Watersheds Based on Atmospheric River Occurrence, Intensity, and Duration, Geophys. Res. Lett. 45, 11693–11701.
+&ensp;&ensp;&ensp; 1.	Chen, X., L. R. Leung, Y. Gao, Y. Liu, M. Wigmosta, and M. Richmond (2018), Predictability of Extreme Precipitation in Western U.S. Watersheds Based on Atmospheric River Occurrence, Intensity, and Duration, Geophys. Res. Lett. 45, 11693–11701.
 
 
 ---
