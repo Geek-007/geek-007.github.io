@@ -8,7 +8,7 @@
 
 <!-- Phone: [158xxxxxxx](tel://15848) -->
 
-- Name:[name] Geek
+* Name:[name] Geek
 - Email: <tongqingqing@iga.ac.cn>
 - Github: [Geek-007](http://github.com/Geek-007)
 - Twitter: [@Gaoj](https://twitter.com/Gaoj_love)
