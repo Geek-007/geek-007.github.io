@@ -46,8 +46,8 @@
 
 ---
 ## Technical Skills
- - Programming language : [python](https://www.python.org/)、[ncl](http://www.ncl.ucar.edu/)、[Fortran](https://www.fortran.com/)、[Bash](https://www.gnu.org/software/bash/)
- - Platform : [Windows](https://www.microsoft.com/zh-cn/windows/)、[Linux](https://www.linux.org/)
+ - Programming language : [python](https://www.python.org/);[ncl](http://www.ncl.ucar.edu/);[Fortran](https://www.fortran.com/);[Bash](https://www.gnu.org/software/bash/)
+ - Platform : [Windows](https://www.microsoft.com/zh-cn/windows/);[Linux](https://www.linux.org/)
  - Numerical model : [WRF](http://www2.mmm.ucar.edu/wrf/users/)
 
 
