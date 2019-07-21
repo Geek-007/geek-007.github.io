@@ -1,3 +1,4 @@
+<img src="https://www.your-website.com/favicon.ico" />
 # Welcome to My HomePage
 
 > You can find all the information [on GitHub](https://github.com/geek-007)
