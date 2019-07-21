@@ -36,14 +36,14 @@
 ## Education
 
 
-- **2007-2008**　　Ph.D. in Civil and Environmental Engineering 
+- **2007-2008**　　Ph.D.　-　Civil and Environmental Engineering 
 
 
 ---
 ## Honors and Awards
 
 
-- **2019**　　Editor’s Award　　Advances in Atmospheric Sciences 
+- **2019**　　Editor’s Award　-　Advances in Atmospheric Sciences 
 
 
 ---
