@@ -27,11 +27,9 @@
 
 ---
 ## Professional Experience
-- **2018-2019**               Postdoctoral
-   &nbsp; Research 
-   &ensp; Associate
-                               Pacific Northwest National Laboratory, Richland, WA, USA
 
+
+- **2016-2019**　　Research Assistant　　Northeast Institute of Geography and Agroecology, CAS
 
 
 ---
@@ -39,6 +37,7 @@
 
 
 - **2007-2008**               Ph.D. in Civil and Environmental Engineering 
+
 
 ---
 ## Honors and Awards
