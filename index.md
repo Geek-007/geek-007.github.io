@@ -18,7 +18,7 @@
 ## Research Interests
 
 
-- Exercise regularly
+&gt; Exercise regularly
 - Personality independence
 - Keen to learn without interruption
 - Worked on projects with others, and also independently assumed some - small projects
