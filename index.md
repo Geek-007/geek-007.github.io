@@ -18,7 +18,7 @@
 ---
 ## Research Interests
 
-
+&rArr; Exercise regularly
 &gt; Exercise regularly
 - Personality independence
 - Keen to learn without interruption
