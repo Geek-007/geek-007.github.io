@@ -1,4 +1,3 @@
-<img src="https://www.your-website.com/favicon.ico" />
 # Welcome to My HomePage
 
 > You can find all the information [on GitHub](https://github.com/geek-007)
@@ -18,16 +17,20 @@
 ---
 ## Research Interests
 
-&rArr; Exercise regularly
-&gt; Exercise regularly
+
 - Personality independence
 - Keen to learn without interruption
 - Worked on projects with others, and also independently assumed some - small projects
 - Received some minor competition awards
 - Hope for greater progress
 
+
 ---
 ## Professional Experience
+*2018-2019*               Postdoctoral Research Associate
+                          Pacific Northwest National Laboratory, Richland, WA, USA
+
+
 
 ---
 ## Education
