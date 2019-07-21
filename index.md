@@ -44,7 +44,7 @@
 ## Honors and Awards
 
 
-- **2019**      Editor’s Award, Advances in Atmospheric Sciences 
+- **2019**      Editor’s Award, Advances in Atmospheric Sciences 	Chen, X., L. R. Leung, Y. Gao, Y. Liu, M. Wigmosta, and M. Richmond (2018), Predictability of Extreme Precipitation in Western U.S.
 
 
 ---
