@@ -27,7 +27,9 @@
 
 ---
 ## Professional Experience
-   **2018-2019**               Postdoctoral Research Associate
+   **2018-2019**               Postdoctoral
+   &nbsp; Research 
+   &ensp; Associate
                                Pacific Northwest National Laboratory, Richland, WA, USA
 
 
