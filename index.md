@@ -59,7 +59,7 @@
 
 ---
 ## Technical Skills
-Programming language                    Python, NCL, Fortran, Bash
+　　Programming language                    Python, NCL, Fortran, Bash
 Platform                                Windows, Linux
 Numerical model                         Weather Research and Forecasting model (WRF)
 
