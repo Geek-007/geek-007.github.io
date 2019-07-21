@@ -27,7 +27,7 @@
 
 ---
 ## Professional Experience
-   **2018-2019**               Postdoctoral
+- **2018-2019**               Postdoctoral
    &nbsp; Research 
    &ensp; Associate
                                Pacific Northwest National Laboratory, Richland, WA, USA
@@ -38,20 +38,20 @@
 ## Education
 
 
-**2007-2008**               Ph.D. in Civil and Environmental Engineering 
+- **2007-2008**               Ph.D. in Civil and Environmental Engineering 
 
 ---
 ## Honors and Awards
 
 
-**2019**      Editor’s Award, Advances in Atmospheric Sciences 
+- **2019**      Editor’s Award, Advances in Atmospheric Sciences 
 
 
 ---
 ## Publications
 
 
-1.	Chen, X., L. R. Leung, Y. Gao, Y. Liu, M. Wigmosta, and M. Richmond (2018), Predictability of Extreme Precipitation in Western U.S. Watersheds Based on Atmospheric River Occurrence, Intensity, and Duration, Geophys. Res. Lett. 45, 11693–11701.
+&ensp; 1.	Chen, X., L. R. Leung, Y. Gao, Y. Liu, M. Wigmosta, and M. Richmond (2018), Predictability of Extreme Precipitation in Western U.S. Watersheds Based on Atmospheric River Occurrence, Intensity, and Duration, Geophys. Res. Lett. 45, 11693–11701.
 
 
 ---
