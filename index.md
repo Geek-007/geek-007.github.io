@@ -47,7 +47,7 @@
 ---
 ## Technical Skills
  - Programming language : [python](https://www.python.org/)|[ncl](http://www.ncl.ucar.edu/)|Fortran|[Bash](https://www.gnu.org/software/bash/)
- - Platform : Windows|Linux
+ - Platform : Windows |Linux
  - Numerical model : Weather Research and Forecasting model (WRF)
 
 
