@@ -51,3 +51,11 @@
  - Numerical model : [WRF](http://www2.mmm.ucar.edu/wrf/users/)
 
 
+
+theme: jekyll-theme-minimal
+
+title: Geek's HomePage
+description: Eat the bitter bitter for the man
+
+logo: https://github.com/Geek-007/geek-007.github.io/blob/master/logo.jpg
+show_downloads: false
