@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Hello，World！</title>
+    <link rel="icon" type="image/x-icon" href="https://www.tongqingqing.name/favicon.ico"/>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width">
@@ -91,5 +92,53 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		/*鼠标特效 */
+		var a_idx = 0;
+		jQuery(document).ready(function($) {
+		    $("body").click(function(e) {
+		        var a = new Array("Geek","富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+		        var $i = $("<span/>").text(a[a_idx]);
+		        a_idx = (a_idx + 1) % a.length;
+		        var x = e.pageX,
+		        y = e.pageY;
+		        $i.css({
+		            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+		            "top": y - 20,
+		            "left": x,
+		            "position": "absolute",
+		            "font-weight": "bold",
+		            "color": "#ff6651"
+		        });
+		        $("body").append($i);
+		        $i.animate({
+		            "top": y - 180,
+		            "opacity": 0
+		        },
+		        1500,
+		        function() {
+		            $i.remove();
+		        });
+		    });
+		});
+		</script>
+ 
+    <script>  
+// 浏览器标题切换  
+var OriginTitile = document.title;    // 保存之前页面标题  
+var titleTime;  
+document.addEventListener('visibilitychange', function(){  
+    if (document.hidden){  
+        document.title = ' 草榴社區主論壇 ?';  
+        clearTimeout(titleTime);  
+    }else{  
+        document.title = '生命-1s ~ ';  
+        titleTime = setTimeout(function() {  
+            document.title = OriginTitile;  
+        }, 2000); // 2秒后恢复原标题  
+    }  
+});  
+</script>
   </body>
 </html>
