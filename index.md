@@ -6,7 +6,7 @@
 
 ## Personal Information
 <!-- Phone: [158xxxxxxx](tel://15848) -->
-* Name:[Geek](https://www.baidu.com)
+- Name:[Geek](https://www.baidu.com)
 - Github: [Geek](https://github.com/Geek-007)
 - Weibo: [@Gaoj](https://weibo.com/)
 - Email: <tongqingqing@iga.ac.cn>
@@ -49,13 +49,3 @@
  - Programming language : [python](https://www.python.org/)、[ncl](http://www.ncl.ucar.edu/)、[Fortran](https://www.fortran.com/)、[Bash](https://www.gnu.org/software/bash/)
  - Platform : [Windows](https://www.microsoft.com/zh-cn/windows/)、[Linux](https://www.linux.org/)
  - Numerical model : [WRF](http://www2.mmm.ucar.edu/wrf/users/)
-
-
-
-theme: jekyll-theme-minimal
-
-title: Geek's HomePage
-description: Eat the bitter bitter for the man
-
-logo: https://github.com/Geek-007/geek-007.github.io/blob/master/logo.jpg
-show_downloads: false
