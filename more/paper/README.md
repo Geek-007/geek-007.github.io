@@ -12,21 +12,28 @@
 ## 常用命令
 ### 查看计算机参数
 #### 查看CPU信息（型号）
-`cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c` 
+```bash
+cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+```
 #### 查看物理CPU个数
-`cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l`
+```bash
+cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+```
 #### 查看每个物理CPU中core的个数(即核数)
-`cat /proc/cpuinfo| grep "cpu cores"| uniq`
+```bash
+cat /proc/cpuinfo| grep "cpu cores"| uniq
+```
 #### 查看逻辑CPU的个数
-`cat /proc/cpuinfo| grep "processor"| wc -l`
-
+```bash
+cat /proc/cpuinfo| grep "processor"| wc -l
+```
 ### 命令参数
-$0    脚本名称
-$1-9　脚本执行时的参数1到参数9
-$?	  脚本的返回值　　　　
-$#	  脚本执行时，输入的参数的个数
-$@	  输入的参数的具体内容（将输入的参数作为一个多个对象，即是所有参数的一个列表）
-$*	  输入的参数的具体内容（将输入的参数作为一个单词）
+1. $0    脚本名称
+2. $1-9　脚本执行时的参数1到参数9
+3. $?	  脚本的返回值　　　　
+4. $#	  脚本执行时，输入的参数的个数
+5. $@	  输入的参数的具体内容（将输入的参数作为一个多个对象，即是所有参数的一个列表）
+6. $*	  输入的参数的具体内容（将输入的参数作为一个单词）
 
 ### 查看文件数量
 ```bash
