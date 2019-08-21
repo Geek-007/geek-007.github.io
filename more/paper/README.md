@@ -433,22 +433,36 @@ done < uwyo.txt
 http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=01&FROM=0100&TO=3112&STNM=51777 20170101003112.txt
 http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=02&FROM=0100&TO=2812&STNM=51777 20170201002812.txt
 http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=03&FROM=0100&TO=3112&STNM=51777 20170301003112.txt
-http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=04&FROM=0100&TO=3012&STNM=51777 20170401003012.txt
-http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=05&FROM=0100&TO=3112&STNM=51777 20170501003112.txt
-http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=06&FROM=0100&TO=3012&STNM=51777 20170601003012.txt
-http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=07&FROM=0100&TO=3112&STNM=51777 20170701003112.txt
-http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=08&FROM=0100&TO=3112&STNM=51777 20170801003112.txt
-http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=09&FROM=0100&TO=3012&STNM=51777 20170901003012.txt
-http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=10&FROM=0100&TO=3112&STNM=51777 20171001003112.txt
-http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=11&FROM=0100&TO=3012&STNM=51777 20171101003012.txt
-http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=12&FROM=0100&TO=3112&STNM=51777 20171201003112.txt
 ```
+
+### convert [convert](https://www.jianshu.com/p/68196b215289)
+```bash
+convert -crop 300x300+0+0 -resize 200x200 -colors 100 +profile "*" 1.jpg 1.png  
+```
+处理过程解释：
+
+1、把当前目录1.jpg图片文件，从左上角(0,0)坐标为起点，裁剪一块300x300像素的部分。
+2、然后把这部分缩小到200x200像素。
+3、然后把颜色缩减到100色。
+4、+profile "*" ， 意味着在图片文件里不存储Exif信息，以减小图片体积。
+5、最后生成1.png，保存在当前目录。
+
+注意：-resize会试图保留原图的原始长宽比例，因此不一定生成的图片和你指定的尺寸一定匹配，比如，如果2.jpg大小是400x200，所以如果用命令：convert 2.jpg -resize 100x100 2.png，那么生成的图片2.png的实际大小是100x50。
+
+常用的参数用途说明：
+
+-crop 宽x高+起点横坐标+起点纵坐标：裁剪图 
+-resize 宽x高!：改变尺寸，**如果使用惊叹号，表示不保留视觉比例，强行改变尺寸匹配给定的宽和高**；如果仅给定宽或者高，如“宽x”或“x高”形式的参数(“x高”与“宽x高”的效果是一样的)，则以已知参数为基准按比例改变尺寸。
+-colors 颜色数：设定图片采用的颜色数，如果是生成png或gif图片应指定这个参数 
+-quality 质量：设定jpeg图片输出质量，推荐采用80，此命令仅用于输出格式是jpg的情况，不应省略，省略的话默认质量是95，生成图片过大
++profile "*"：图片中不存储Exif信息，必须使用，否则生成图片过大
+
+
+
+
 
 参考文献：[美]Kurt Wall等著 张辉译.《GNU/Linux编程指南》第二版 26-45. 
 参考网站：[GNU文档](http://gcc.gnu.org/onlinedocs/)
 
 ## 修订历史
-- 2017-10-15: 初稿
-- 2017-12-18: 增加 `gcc` 说明
-- 2018-02-02: 增加文本内容的处理命令
-- 2018-04-01: 增加 `wget` 的使用示例
+- 2018-10-15: 初稿
