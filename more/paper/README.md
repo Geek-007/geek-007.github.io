@@ -10,6 +10,16 @@
 目前存在的问题就是shell中数据进制的解释问题，保证指定位数。
 
 ## 常用命令
+### 内网穿透
+#### 内网
+```bash
+ssh -N -f -R 2323:127.0.0.1 root@123.206.30.192
+````
+#### 外网
+```bash
+ssh -p 2323 geek@127.0.0.1
+```
+
 ### 查看计算机参数
 #### 查看CPU信息（型号）
 ```bash
@@ -433,6 +443,18 @@ done < uwyo.txt
 http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=01&FROM=0100&TO=3112&STNM=51777 20170101003112.txt
 http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=02&FROM=0100&TO=2812&STNM=51777 20170201002812.txt
 http://weather.uwyo.edu/cgi-bin/sounding?region=seasia&TYPE=TEXT%3ALIST&YEAR=2017&MONTH=03&FROM=0100&TO=3112&STNM=51777 20170301003112.txt
+```
+
+```bash
+#!/usr/bin/env bash
+
+wget -i S200501-201712.txt
+
+for file in `find  -name "SURF_CLI_CHN_MUL_*"`
+    do
+    filename=`echo $file | awk -F"?" '{ print $1}'`	
+    mv $file $filename
+done 
 ```
 
 ### convert [convert](https://www.jianshu.com/p/68196b215289)
