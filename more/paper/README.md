@@ -1,10 +1,6 @@
 ---
 title: Shell Command Learning
 date: 2019-08-15 11:17:12
-categories: 
-    - Technological Learning
-tags: 
-    - Shell
 ---
 ## Linux 资源
 - [Linux 工具快速教程](http://linuxtools-rst.readthedocs.io/zh_CN/latest/)
