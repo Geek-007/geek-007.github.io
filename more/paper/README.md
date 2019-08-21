@@ -10,7 +10,22 @@
 目前存在的问题就是shell中数据进制的解释问题，保证指定位数。
 
 ## 常用命令
+### 命令参数
+$0    脚本名称
+$1-9　脚本执行时的参数1到参数9
+$?	  脚本的返回值　　　　
+$#	  脚本执行时，输入的参数的个数
+$@	  输入的参数的具体内容（将输入的参数作为一个多个对象，即是所有参数的一个列表）
+$*	  输入的参数的具体内容（将输入的参数作为一个单词）
 
+### 查看文件数量
+```bash
+ls -l *.zip |grep "^-"|wc -l
+```
+### 批量解压
+```bash
+find . -name '*.zip' -exec unzip {} \;  
+```
 ### cut
 适合处理“以单个字符间隔”的文本内容，不利于多个空格的文本文件处理，学会综合使用 `awk` 及 `sed` 结合正则表达式实现文本文件的处理分析。
 
@@ -267,6 +282,8 @@ wget --user=username --password=passwd -k [source_wget.txt]
 # 下载指定目录的文件
 wget -m -c -np -nd -P prefix URL    # -m: 最大递归深度且不移走 .listing 文件,不要重新下载文件除非比本地文件新
 # wget -m -c -np -nd -P data ftp://ftp.cgps.ac.cn/products/position/gamit/ 
+# 下载网站附件
+wget -r -erobots=off -l2 -np  http://soostrc.comet.ucar.edu/data/grib/gfs/20171203/grib.t12z/
 ```
 #### 主要参数
 `- P`: 表示下载的目标目录
