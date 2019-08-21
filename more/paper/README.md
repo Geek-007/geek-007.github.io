@@ -82,6 +82,53 @@ git rm -r -n --cached foldername
 git rm -r --cached  foldername  # 最终执行命令
 git commit -m 'remove folder all file out of control.'  # 提交
 git push origin master  # 提交到远程服务器
+
+eg： 每日自动推送到github（sync_to_github.sh）
+#!/bin/bash
+cd /home/aqf/tongqingqing/run_job/github
+tim2=$(date +%Y%m%d)12
+#tim2=$(date -d "1 day ago" +"%Y%m%d")12
+fig=/home/aqf/tongqingqing/run_job/wrf_project/figure
+
+rm -rf display/
+git init
+git clone https://github.com/Geek-007/display.git
+cd display/
+#mkdir WRF CMAQ CMAX WRFchem
+cp -r ${fig}/${tim2} ./WRF/.
+cat > README.md << EOF
+
+# *NEC Weather Forecasting Experiment*
+<br><br><br>
+$(date) All Update
+-------------------------------------------------------------
+<br>
+<table><tr>
+<td><img src=https://github.com/Geek-007/display/blob/master/WRF/${tim2}/${tim2}_t2m.gif border=0></td>
+<td><img src=https://github.com/Geek-007/display/blob/master/WRF/${tim2}/${tim2}_uv10m.gif border=0></td>
+<td><img src=https://github.com/Geek-007/display/blob/master/WRF/${tim2}/${tim2}_rh2m.gif border=0></td>
+</tr></table>
+<table><tr>
+<td><img src=https://github.com/Geek-007/display/blob/master/WRF/${tim2}/${tim2}_precip.gif border=0></td>
+<td><img src=https://github.com/Geek-007/display/blob/master/WRF/${tim2}/${tim2}_snowfall.gif border=0></td>
+<td><img src=https://github.com/Geek-007/display/blob/master/WRF/${tim2}/${tim2}_snowcover.gif border=0></td>
+</tr></table>
+<br>
+
+
+EOF
+
+mv README.md ./WRF/.
+
+#git rm -r --cached 2019051312
+#rm -rf  2019051312
+git add -A
+git commit -m ${tim2}
+#git config --global user.email "1069093304@qq.com"
+# git config --global user.name "geek-007"
+git remote rm origin
+git remote add origin git@github.com:Geek-007/display.git  #https://github.com/Geek-007/display.git
+git push -u origin master
 ```
 
 ### iconv
