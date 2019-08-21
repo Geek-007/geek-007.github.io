@@ -1,6 +1,5 @@
 ---
-title: Shell Command Learning
-date: 2019-08-15 11:17:12
+# shell Command Learning
 ---
 ## Linux 资源
 - [Linux 工具快速教程](http://linuxtools-rst.readthedocs.io/zh_CN/latest/)
