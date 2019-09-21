@@ -9,7 +9,7 @@
 - Name:[Geek](https://www.baidu.com)
 - Github: [Geek](https://github.com/Geek-007)
 - Weibo: [@Gaoj](https://weibo.com/)
-- Email: <tongqingqing@iga.ac.cn>
+- Email: <me@tongqingqing.name>
 
 
 ---
