@@ -1,153 +1,129 @@
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>TongQingQing.Name</title>
-    <meta name="author" content="Geek">
-	<meta name="description" content="个人网站，热爱代码，写作，设计，读书，致力于新艺术主义设计风格。">
-    <meta name="keywords" content="个人网站,设计师,作者,新艺术">
-    <link rel="icon" type="image/png" href="favicon.ico">
-    <link rel="stylesheet" href="css/style.css">
-	<script src="js/jquery.min.js"></script>
-</head>
-<body id="body">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>REPT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <div class="loadin"><div class="loadin-ball"></div></div>
-<!--	
-	<script language="javascript" > 
-    var curIndex=0; 
-    var timeInterval=9000; 
-    var arr=new Array(); 
-    arr[0]="background:url(img/1.jpg)"; 
-    arr[1]="background:url(img/2.jpg)"; 
-    arr[2]="background:url(img/3.jpg)"; 
-    setInterval(changeImg,timeInterval); 
-    function changeImg(){ 
-    var obj=document.getElementById("showpic"); 
-    if (curIndex==arr.length-1){ 
-    curIndex=0;} 
-    else{ 
-    curIndex+=1;} 
-    obj.style=""+arr[curIndex]; 
-    } 
-    </script> 
--->
-    <div style="background:url(img/1.jpg);" id="showpic"></div>	
-	
-	<a href="http://www.tongqingqing.name" class="logo"><div class="l-logo"></div><span>P</span><span>R</span><span>O</span><span>J</span><span>E</span><span>C</span><span>T</span></a>
-	
-	<div class="menu">
-        <li><a href="https://www.tongqingqing.name/domain" target="_blank"><lang class="cn">#WRF研究区域划分</lang><lang class="en">#Set WRF Domian</lang></a></li>
-        <li><a href="pay/" target="_blank"><lang class="cn"></lang><lang class="en"></lang></a></li>
-        <li><a href="aqi/" target="_blank"><lang class="cn"></lang><lang class="en"></lang></a></li>
-        <li><a href="https://code.aliyun.com/u/geek-007/" target="_blank"><lang class="cn"></lang><lang class="en"></lang></a></li>
-    </div>
-	
-	<div class="footer">
-	    <div class="other"><lang class="cn">千里之行，始于足下。</lang><lang class="en">A thousand journey is started by taking the first step.</lang></div>
-	    <div class="contact">
-	        <li><div class="copyright">Contact Me :</div></li>
-			<li><a target="_blank" href="mailto:me@tongqingqing.name">@ TongQingQing</a></li>
-		</div>
-	</div>
-	
-	<div class="lang">
-	    <span class="cn-span">ZH</span>
-		<span class="en-span">EN</span>
-	</div>
-	
-	<div class="last">
-	    <div class="line"></div>
-		<a class="title music cd-headline letters rotate-3 play">
-            <div class="m-span"></div>
-            <div class="m-tips cd-words-wrapper"><b class="is-visible">TheEndless</b><b>TheEndless</b></div>
-			<div class="m-tips hidden">TheEndless</div>
-			<audio id="bgMusic" src="https://omjirqmxt.qnssl.com/bgm.mp3" hidden="hidden" loop="loop"></audio>
-        </a>
-		<div class="copyright">COPYRIGHT © 2017 | Geek</div>
-          
-        
-	</div>
-	
-    <script src="js/main.js"></script>
-	
-<script>  
-// 浏览器标题切换  
-var OriginTitile = document.title;    // 保存之前页面标题  
-var titleTime;  
-document.addEventListener('visibilitychange', function(){  
-    if (document.hidden){  
-        document.title = ' 草榴社區主論壇 ™';  
-        clearTimeout(titleTime);  
-    }else{  
-        document.title = '生命-1s ~ ';  
-        titleTime = setTimeout(function() {  
-            document.title = OriginTitile;  
-        }, 2000); // 2秒后恢复原标题  
-    }  
-});  
-</script>  
-  
-<script>  
-jQuery(document).ready(function($) {   
-    $("html,body").click(function(e){   
-        var dfs=[  
-            "您刚才的点击使计生局放开了"+Math.floor(Math.random()*100)+"胎政策。",  
-            "您刚才的点击使黄石超级火山爆发了",  
-            "您刚才的点击使罗辑又换了一个女朋友",  
-            "您刚才的点击使小米公司收购了高通公司",  
-            "您刚才的点击引爆了"+Math.random()*10000+"光年外的一颗恒星",  
-            "您刚才的点击使头发变得乌黑浓密了",  
-            "您刚才的点击使您的波函数坍塌了",   
-            "您刚才的点击使您的银行卡被盗刷了",   
-            "您刚才的点击使普朗克常数扩大了十倍",   
-            "您刚才的点击熄灭了蓝色空间号二号主引擎",   
-            "您刚才的点击创造了一个小宇宙",   
-            "您刚才的点击使宇宙由开放转为闭合",   
-            "您刚才的点击让云天明和关一帆在一起了",  
-            "您刚才的点击使三体第"+Math.floor(Math.random()*100)+"舰队起航了",   
-            "您刚才的点击使第"+Math.floor(Math.random()*10000)+"号宇宙毁灭了",   
-            "您刚才的点击向太阳发射了一颗光粒",   
-            "您刚才的点击导致三体行星撞上他的主星",  
-            "您刚才的点击令人类文明将在"+(new Date()).getFullYear()+"年"+((new Date()).getMonth()+1)+"月"+(new Date()).getUTCDate()+"日23:59:59毁灭",  
-            "您刚才的点击启动了威慑系统",  
-            "您刚才的点击使谢顿计划脱离了正轨",  
-            "您刚才的点击使程心按下了威慑开关",  
-            "您刚才的点击引起了"+Math.random()*10000+"光年外一个行星的爆炸",  
-            "您刚才的点击使宇宙中产生了一些暗物质",  
-            "您刚才的点击引起了所有行星上的地震",  
-            "您刚才的点击使一台诺基亚摔碎了",  
-            "您刚才的点击使360云盘倒闭了",  
-            "您刚才的点击小米发布了MIX概念手机",  
-            "千万不要再次点击鼠标",  
-            "真的千万不要再次点击鼠标"  
-        ];  
-        var n=Math.floor(Math.random() * dfs.length + 1)-1;   //随机获取一条数据  
-        var $i=$("<p/>").text(dfs[n]);      //新建一个b标签，并显示随机的话语  
-        var x=e.pageX,y=e.pageY;            //获取鼠标点击的x，和y  
-        $i.css({                            //为标签赋予css值  
-            "z-index":99999,   
-            "top":y-20,   
-            "left":x,   
-            "position":"absolute",   
-            "color":"#009966",  
-            "font-family":"微软雅黑",  
-            "cursor":"default",  
-            "-moz-user-select": "none",  
-            "-webkit-user-select": "none",  
-            "-ms-user-select": "none",  
-            "-khtml-user-select": "none",  
-            "user-select": "none",  
-        });   
-        $("body").append($i);               //在尾部插入  
-        $i.animate( {"top":y-180,"opacity":0}, 1500, function(){$i.remove();});     //动画消除  
-        e.stopPropagation();  
-    });  
-});   
-</script>  
-  
-  
-</body>
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
 
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 20px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+      <div class="header">
+        <h4 class="text-muted">REPT : Regional Emissions Inventory Processing Tool (Beta)</h4>
+      </div>
+
+      <hr>
+
+      <h4>About</h4>
+      <p>REPT is a Python framework, built around the WRF-CMAQ, to produce gliding specific weather/air quality forecasts. It automates all the steps involved; downloading the GFS input data, running WRF-CMAQ, post-processing the model output, and creating maps/time series/soundings. REPT is still in development: we are busy testing the code, validating the setup, etc. Anyone who is interested in using REPT is welcome to do so - we would be happy to help - but don't expect a finished product :-) When the time is right, an official 1.0 version will be released.</p>
+      <div class="row-fluid">
+        <div class="span6">
+         
+          <h4>Examples</h4>
+          <p>We are currently running tests with REPT for a domain covering most of the China. If you are interested in a preview, please contact us. Some example figures are provided below.</p>
+        </div>
+
+        <div class="span6">
+
+          <h4>Source code</h4>
+          <p>The source code is released under a GPLv3 licence at Github:</p>
+          <p><a href="https://github.com/olga/olga_model/" class="btn btn-success btn-lg" role="button">More &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h4>Example output</h4>
+
+      <div class="row-fluid">
+        <div class="span6">         
+           <img src="figures/D01_PM25_2022050907.gif"/>
+		   <img src="figures/D01_PM25_2022050907.gif"/>
+        </div>
+
+        <div class="span6">
+           <img src="figures/D01_PM25_2022050907.gif"/>
+		   <img src="figures/D01_PM25_2022050907.gif"/>
+        </div>
+      </div>
+
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+  </body>
 </html>
+
