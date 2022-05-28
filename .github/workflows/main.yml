@@ -2,7 +2,7 @@ name: 'shell action'
 
 on:
   schedule:
-    - cron: '50 * * * *'
+    - cron: '40 * * * *'
 
 jobs:
   bot:
