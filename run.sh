@@ -93,7 +93,7 @@ cat << EOF > index.html
 
       <hr>
 
-      <h4>Evaluation (Update: $(date +"%Y-%m-%d %H:%M"))</h4>
+      <h4>Evaluation (Update: $(date -u -d"+8 hour" +"%Y-%m-%d %H:%M"))</h4>
 
       <div class="row-fluid">
         <div class="span6">         
@@ -186,7 +186,7 @@ cat << EOF > forecast.html
   <body>
 
     <div class="container-narrow">
-      <h4>Forecast Systerm (Update: $(date +"%Y-%m-%d %H:%M"))<h4>
+      <h4>Forecast Systerm (Update: $(date -u -d"+8 hour" +"%Y-%m-%d %H:%M"))<h4>
       <p><a onclick="javascript:history.back();" class="btn btn-success btn-lg" role="button">返回 &raquo;</a></p>
       <hr>
       <div class="row-fluid">
