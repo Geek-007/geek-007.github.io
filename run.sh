@@ -1,0 +1,124 @@
+#!/bin/bash
+
+cat << EOF > index.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RAE(Regional atmospheric environment)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 900px;
+      }
+      .container-narrow > hr {
+        margin: 20px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+      <div class="header">
+        <h4 class="text-muted">REA : Regional atmospheric environment (Beta)</h4>
+      </div>
+
+      <hr>
+
+      <h4>About</h4>
+      <p>REPT is a Python framework, built around the WRF-CMAQ, to produce gliding specific weather/air quality forecasts. It automates all the steps involved; downloading the GFS input data, running WRF-CMAQ, post-processing the model output, and creating maps/time series/soundings. REPT is still in development: we are busy testing the code, validating the setup, etc. Anyone who is interested in using REPT is welcome to do so - we would be happy to help - but don't expect a finished product :-) When the time is right, an official 1.0 version will be released.</p>
+      <div class="row-fluid">
+        <div class="span6">
+         
+          <h4>Examples</h4>
+          <p>We are currently running tests with REPT for a domain covering most of the China. If you are interested in a preview, please contact us. Some example figures are provided below.</p>
+        </div>
+
+        <div class="span6">
+
+          <h4>Forecast</h4>
+          <p>The source code is released under a GPLv3 licence at Github:</p>
+          <p><a href="forecast.html" class="btn btn-success btn-lg" role="button">More &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h4>Evaluation (Update: $(date +"%Y-%m-%d %H:%M"))</h4>
+
+      <div class="row-fluid">
+        <div class="span6">         
+           <img src="https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_TEMP.gif"/>
+	   <hr>
+	   <img src="https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/eva_temp.png"/>
+        </div>
+
+        <div class="span6">
+           <img src="https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25.gif"/>
+	   <hr>
+           <img src="https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/eva_pm25.png"/>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+  </body>
+</html>
+
+EOF
+
+tmp=$(date +%H)
+if [ ${tmp} == "07" ] ; then
+cat << EOF > forecast.html
+
+
+EOF
+fi
