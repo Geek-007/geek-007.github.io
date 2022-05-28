@@ -2,7 +2,7 @@ name: 'shell action'
 
 on:
   schedule:
-    - cron: '40 * * * *'
+    - cron: '20 * * * *'
 
 jobs:
   bot:
@@ -20,5 +20,5 @@ jobs:
           git config --global user.email "1069093304@qq.com"
           git config --global user.name "Geek-007"
           git add -A
-          git commit -m "Updated " || exit 
+          git commit -m "Updated" || exit 
           git push
