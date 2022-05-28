@@ -1,0 +1,24 @@
+name: 'shell action'
+
+on:
+  schedule:
+    - cron: '50 * * * *'
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout codes'
+        uses: actions/checkout@v2
+      - name: 'run'
+        run: bash ./run.sh
+      - name: 'date'
+        run: echo `date` > date.log
+      - name: Commit and push if changed 
+        run: |
+          git diff
+          git config --global user.email "1069093304@qq.com"
+          git config --global user.name "Geek-007"
+          git add -A
+          git commit -m "Updated " || exit 
+          git push
