@@ -119,6 +119,968 @@ tmp=$(date +%H)
 if [ ${tmp} == "07" ] ; then
 cat << EOF > forecast.html
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RAE(Regional atmospheric environment)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src='js/imageplayer.js'></script>
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 900px;
+      }
+      .container-narrow > hr {
+        margin: 20px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+      <h4>Forecast Systerm (Update: $(date +"%Y-%m-%d %H:%M"))<h4>
+      <p><a onclick="javascript:history.back();" class="btn btn-success btn-lg" role="button">返回 &raquo;</a></p>
+      <hr>
+      <div class="row-fluid">
+        <div class="span6">         
+		 <div id='ipDiv1'></div>
+			<script>
+			  ip = new ImagePlayer({			
+				element: 'ipDiv1',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_49.png',
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'
+			  });
+			</script>
+		
+		 <div id='ipDiv2'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv2',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_49.png',					
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'
+			  });
+			</script>
+		
+		 <div id='ipDiv3'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv3',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_49.png',  				
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'
+			  });
+			</script>
+
+		 <div id='ipDiv4'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv4',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_49.png',						
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'
+			  });
+			</script>
+			
+		 <div id='ipDiv5'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv5,
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_49.png',				  
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'
+			  });
+			</script>
+
+		 <div id='ipDiv6'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv6',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_49.png',						
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'
+			  });
+			</script>
+
+              <div id='ipDiv7'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv7',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_49.png',				  					
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'
+			  });
+			</script>
+        </div>   
+	    
+        <div class="span6">
+		    <div id='ipDiv8'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv8',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_49.png',				  					
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'
+			  });
+			</script> 
+
+		 <div id='ipDiv9'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv9',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_49.png',				
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'
+			  });
+			</script>
+		
+		 <div id='ipDiv10'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv10',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_49.png',					
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'
+			  });
+			</script>
+
+		 <div id='ipDiv11'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv11',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_49.png',
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'
+			  });
+			</script>
+			
+		 <div id='ipDiv12'></div>
+			<script>
+			  ip = new ImagePlayer({	
+				element: 'ipDiv12,
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_49.png',	
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'	
+			  });
+			</script>
+
+		 <div id='ipDiv13'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv13',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_49.png',		
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'	
+			  });
+			</script>
+		
+		 <div id='ipDiv14'></div>
+			<script>
+			  ip = new ImagePlayer({
+				element: 'ipDiv14',
+				images: [  
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_01.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_02.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_03.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_04.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_05.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_06.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_07.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_08.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_09.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_10.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_11.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_12.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_13.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_14.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_15.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_16.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_17.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_18.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_19.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_20.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_21.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_22.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_23.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_24.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_25.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_26.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_27.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_28.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_29.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_30.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_31.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_32.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_33.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_34.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_35.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_36.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_37.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_38.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_39.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_40.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_41.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_42.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_43.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_44.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_45.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_46.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_47.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_48.png',
+				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_49.png',				  				
+				],
+				autoplay: 0,
+				interval: 50,
+				width : "5000px",
+				height : "10000px",
+				icondir:  'images/'	
+			  });
+			</script>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+  </body>
+</html>
+
 
 EOF
 fi
