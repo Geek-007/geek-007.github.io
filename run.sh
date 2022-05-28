@@ -116,7 +116,7 @@ cat << EOF > index.html
 EOF
 
 tmp=$(date +%H)
-if [ ${tmp} == "07" ] ; then
+if [ ${tmp} == "23" ] ; then
 cat << EOF > forecast.html
 
 <!DOCTYPE html>
