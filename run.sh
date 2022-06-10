@@ -247,7 +247,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_AQI_49.png',
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'
@@ -310,7 +310,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM25_49.png',					
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'
@@ -373,7 +373,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_PM10_49.png',  				
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'
@@ -436,7 +436,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_O3_49.png',						
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'
@@ -499,7 +499,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_49.png',				  
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'
@@ -562,7 +562,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_CO_49.png',						
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'
@@ -625,7 +625,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_SO2_49.png',				  					
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'
@@ -690,7 +690,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_VIS_49.png',				  					
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'
@@ -753,7 +753,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_T2m_49.png',				
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'
@@ -816,7 +816,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_RH2m_49.png',					
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'
@@ -879,7 +879,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Wind10m_49.png',
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'
@@ -942,7 +942,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_49.png',	
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'	
@@ -1005,7 +1005,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowfall_49.png',		
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'	
@@ -1068,7 +1068,7 @@ cat << EOF > forecast.html
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Snowdepth_49.png',				  				
 				],
 				autoplay: 0,
-				interval: 50,
+				interval: 500,
 				width : "5000px",
 				height : "10000px",
 				icondir:  'images/'	
