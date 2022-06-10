@@ -7,7 +7,7 @@ var ImagePlayer = function(args) {
   var align = (typeof args.align === 'undefined') ? 'center' : args.align;
   var width = (typeof args.width === 'undefined') ? '' : args.width;
   var height = (typeof args.height === 'undefined') ? '' : args.height;
-  var interval = (typeof args.interval === 'undefined') ? 300 : args.interval;
+  var interval = (typeof args.interval === 'undefined') ? 50 : args.interval;
   var autoplay = (typeof args.autoplay === 'undefined') ? 1 : args.autoplay;
   var controls = (typeof args.control === 'undefined') ? 1 : args.controls;
   var bgcolor = (typeof args.bgcolor === 'undefined') ? '#ffffff' : args.bgcolor;
