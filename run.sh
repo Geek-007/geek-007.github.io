@@ -94,7 +94,7 @@ cat << EOF > index.html
       <hr>
 
       <h4>Evaluation (Update: $(date -u -d"+8 hour" +"%Y-%m-%d %H:%M"))</h4>
-
+      <hr>
       <div class="row-fluid">
         <div class="span6">         
            <img src="https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_TEMP.gif"/>
