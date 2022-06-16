@@ -446,7 +446,7 @@ cat << EOF > forecast.html
 		 <div id='ipDiv5'></div>
 			<script>
 			  ip = new ImagePlayer({
-				element: 'ipDiv5,
+				element: 'ipDiv5',
 				images: [  
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_01.png',
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_NO2_02.png',
@@ -889,7 +889,7 @@ cat << EOF > forecast.html
 		 <div id='ipDiv12'></div>
 			<script>
 			  ip = new ImagePlayer({	
-				element: 'ipDiv12,
+				element: 'ipDiv12',
 				images: [  
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_01.png',
 				  'https://geek-007.oss-cn-beijing.aliyuncs.com/website/figures/D01_Precip_02.png',
