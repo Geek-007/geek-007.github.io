@@ -86,7 +86,7 @@ cat << EOF > index.html
         <div class="span6">
 
           <h4>Forecast</h4>
-          <p>The source code is released under a GPLv3 licence at Github:</p>
+          <p>If you want to see more simulation results, check out more:</p>
           <p><a href="forecast.html" class="btn btn-success btn-lg" role="button">More &raquo;</a></p>
         </div>
       </div>
