@@ -75,12 +75,12 @@ cat << EOF > index.html
       <hr>
 
       <h4>About</h4>
-      <p>REPT is a Python framework, built around the WRF-CMAQ, to produce gliding specific weather/air quality forecasts. It automates all the steps involved; downloading the GFS input data, running WRF-CMAQ, post-processing the model output, and creating maps/time series/soundings. REPT is still in development: we are busy testing the code, validating the setup, etc. Anyone who is interested in using REPT is welcome to do so - we would be happy to help - but don't expect a finished product :-) When the time is right, an official 1.0 version will be released.</p>
+      <p>REPS is a Python framework, built around the WRF-CHEM/CMAQ/CHIMERE, to produce gliding specific weather/air quality forecasts. It automates all the steps involved; downloading the GFS input data, running AQM, post-processing the model output, and creating maps/time series/soundings. REPS is still in development: we are busy testing the code, validating the setup, etc. Anyone who is interested in using REPS is welcome to do so - we would be happy to help - but don't expect a finished product :-) When the time is right, an official version will be released.</p>
       <div class="row-fluid">
         <div class="span6">
          
-          <h4>Examples</h4>
-          <p>We are currently running tests with REPT for a domain covering most of the China. If you are interested in a preview, please contact us. Some example figures are provided below.</p>
+          <h4>Domain</h4>
+          <p>We are currently running tests with REPS for a domain covering most of the China. If you are interested in a preview, please contact us. Some example figures are provided below.</p>
         </div>
 
         <div class="span6">
