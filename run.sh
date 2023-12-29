@@ -5,7 +5,7 @@ cat << EOF > index.html
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>RAE (Regional atmospheric environment)</title>
+    <title>Regional atmospheric environment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -93,7 +93,7 @@ cat << EOF > index.html
 
       <hr>
 
-      <h4>Evaluation (Update: $(date -u -d"+8 hour" +"%Y-%m-%d %H:%M"))</h4>
+      <h4>Users (Update: $(date -u -d"+8 hour" +"%Y-%m-%d %H:%M"))</h4>
       <hr>
       <div class="row-fluid">
         <div class="span6">         
