@@ -69,7 +69,7 @@ cat << EOF > index.html
 
     <div class="container-narrow">
       <div class="header">
-        <h4 class="text-muted">REA : Regional atmospheric environment (Beta)</h4>
+        <h4 class="text-muted">Regional atmospheric environment (Beta)</h4>
       </div>
 
       <hr>
@@ -123,7 +123,7 @@ cat << EOF > forecast.html
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>RAE (Regional atmospheric environment)</title>
+    <title>Regional atmospheric environment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
